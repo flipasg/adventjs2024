@@ -1,19 +1,23 @@
 import { describe, expect, test } from 'vitest';
+import { manufacture } from '.';
 
 describe('challenge2', () => {
-  test('should be an empty array when no gifts are provided', () => {
-    expect(manufacture([], 'wood')).toEqual([]);
+  test('midu-test 1', () => {
+    const gifts = ['tren', 'oso', 'pelota'];
+    const materials = 'tronesa';
+    expect(manufacture(gifts, materials)).toEqual(['tren', 'oso']);
   });
 
-  test('should be an array with one gift when one gift is provided', () => {
-    expect(manufacture(['doll'], 'plastic')).toEqual(['doll']);
+  test('midu-test 2', () => {
+    const gifts = ['juego', 'puzzle'];
+    const materials = 'jlepuz';
+    expect(manufacture(gifts, materials)).toEqual(["puzzle"]);
   });
 
-  test('should be an array with multiple gifts when multiple gifts are provided', () => {
-    expect(manufacture(['doll', 'car', 'ball'], 'metal')).toEqual(['doll', 'car', 'ball']);
+  test('midu-test 3', () => {
+    const gifts = ['libro', 'ps5']
+    const materials = 'psli'
+    expect(manufacture(gifts, materials)).toEqual([]);
   });
 
-  test('should be an array with the same order of gifts as provided', () => {
-    expect(manufacture(['ball', 'car', 'doll'], 'wood')).toEqual(['ball', 'car', 'doll']);
-  });
 });
